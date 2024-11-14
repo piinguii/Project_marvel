@@ -72,7 +72,7 @@ body {
   column-gap: 60px; 
 }
 
-/* Center divider */
+
 .comic-container::after {
   content: '';
   position: absolute;
@@ -91,7 +91,7 @@ body {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Page shading */
+
 .comic-container::before {
   content: '';
   position: absolute;
@@ -101,15 +101,15 @@ body {
   width: 100%;
   background: linear-gradient(
     to right,
-    transparent 48%,    /* Adjusted gradient positions */
+    transparent 48%,    
     rgba(0, 0, 0, 0.1) 48%,
-    rgba(0, 0, 0, 0.1) 52%,   /* Widened the center shading */
+    rgba(0, 0, 0, 0.1) 52%,   
     transparent 52%
   );
   pointer-events: none;
 }
 
-/* Comic title styling update */
+
 .comic-title {
   font-family: 'Bangers', cursive;
   font-size: 1.2em;
@@ -141,7 +141,7 @@ body {
 
 
 
-/* Comic thumbnail styling */
+
 .comic-thumbnail {
   width: 100%;
   border: 3px solid #000;
