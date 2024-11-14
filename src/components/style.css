@@ -108,7 +108,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-/* Styling for comics */
+
 .comic-panel {
   border: 5px solid #000;
   background: #fff;
@@ -236,7 +236,7 @@ body {
   );
 }
 
-/* Comic style header */
+
 .comic-viewer-title {
   font-family: 'Bangers', cursive;
   font-size: 3em;
@@ -261,7 +261,7 @@ body {
   color: #2d2d2d;
 }
 
-/* Characters section styling */
+
 .characters-section {
   background: #f0f0f0;
   padding: 20px;
