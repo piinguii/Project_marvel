@@ -1,0 +1,452 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+body {
+  font-family: 'Bangers', sans-serif; 
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background-image: url('../assets/comicBackground.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  min-height: 100vh; 
+}
+
+.marvel-logo {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 100px;
+  transform: rotate(-3deg); 
+  filter: drop-shadow(3px 3px 0 #000); 
+  transition: all 0.3s ease;
+  z-index: 10;
+  /* Comic-style border */
+  background: white;
+  padding: 8px;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+}
+
+.marvel-logo:hover {
+  transform: rotate(3deg) scale(1.1);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.7);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  padding-top: 100px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  position: relative;
+}
+
+
+.comic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  position: relative;
+}
+
+
+.comic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 40px; /* Increased horizontal padding */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  position: relative;
+  column-gap: 60px; 
+}
+
+/* Center divider */
+.comic-container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000,
+    #000 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  transform: translateX(-50%);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Page shading */
+.comic-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 48%,    /* Adjusted gradient positions */
+    rgba(0, 0, 0, 0.1) 48%,
+    rgba(0, 0, 0, 0.1) 52%,   /* Widened the center shading */
+    transparent 52%
+  );
+  pointer-events: none;
+}
+
+/* Comic title styling update */
+.comic-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1.2em;
+  color: #000;
+  text-shadow: 2px 2px 0 #ff0000;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* Styling for comics */
+.comic-panel {
+  border: 5px solid #000;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+}
+
+.comic-panel:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* Comic thumbnail styling */
+.comic-thumbnail {
+  width: 100%;
+  border: 3px solid #000;
+  border-radius: 8px;
+}
+
+
+.favorite-button {
+  cursor: pointer;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 0;
+  padding: 8px;
+  font-size: 20px;
+  transform: rotate(-3deg);
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+}
+
+.favorite-button.favorite {
+  background-color: #ff0000;
+  transform: rotate(3deg);
+}
+
+.favorite-button:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.6);
+}
+
+.favorite-button .star-icon {
+  color: #ff0000;
+}
+
+.favorite-button.favorite .star-icon {
+  color: #fff;
+}
+
+
+.show-favorites-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 25px;
+  background-color: #ff0000;
+  color: white;
+  border: 3px solid #000;
+  font-family: 'Bangers', cursive;
+  font-size: 1.4em;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0 #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10; 
+}
+
+.show-favorites-btn:hover {
+  transform: rotate(2deg) scale(1.05);
+  box-shadow: 6px 6px 0 #000;
+}
+
+
+
+@media (max-width: 1200px) {
+  .comic-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .comic-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .comic-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .comic-panel {
+    padding: 10px;
+  }
+}
+
+.comic-viewer-panel {
+  background: #fff;
+  padding: 30px;
+  margin: 20px;
+  border: 8px solid #000;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  max-width: 900px;
+  
+  clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    100% 95%,
+    95% 100%,
+    0% 100%
+  );
+}
+
+/* Comic style header */
+.comic-viewer-title {
+  font-family: 'Bangers', cursive;
+  font-size: 3em;
+  color: #e23636; 
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+
+.comic-description {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding: 20px;
+  background: #fafafa;
+  border: 2px solid #000;
+  margin: 20px 0;
+  position: relative;
+  color: #2d2d2d;
+}
+
+/* Characters section styling */
+.characters-section {
+  background: #f0f0f0;
+  padding: 20px;
+  border: 3px solid #000;
+  margin-top: 30px;
+}
+
+.characters-header {
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  text-shadow: 2px 2px 0 #e23636;
+}
+
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.character {
+  background: white;
+  padding: 15px;
+  border: 3px solid #000;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+}
+
+.character:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.character:hover {
+  transform: rotate(0) scale(1.05);
+  z-index: 2;
+}
+
+.character-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.character-name {
+  font-family: 'Bangers', cursive;
+  font-size: 1.3em;
+  margin-top: 10px;
+  text-align: center;
+  color: #000;
+  text-shadow: 1px 1px 0 #e23636;
+}
+
+
+.comic-back-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #e23636;
+  color: white;
+  border: 3px solid #000;
+  font-family: 'Bangers', cursive;
+  font-size: 1.2em;
+  cursor: pointer;
+  transform: rotate(-3deg);
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 #000;
+  z-index: 100;
+}
+
+.comic-back-button:hover {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 5px 5px 0 #000;
+}
+
+
+.comic-viewer-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#000 1px, transparent 1px);
+  background-size: 5px 5px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.featured-characters {
+  color: #e62429; 
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #151515; 
+  font-size: 1.2em; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+
+
+.related-comics-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f5f5f5;
+  border: 3px solid #000;
+  position: relative;
+}
+
+.related-comics-header {
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+  color: #e23636;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.related-comics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.related-comic-panel {
+  background: white;
+  padding: 10px;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.related-comic-panel:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
+}
+
+.related-comic-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #000;
+}
+
+.related-comic-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1em;
+  margin-top: 8px;
+  text-align: center;
+  color: #000;
+  text-shadow: 1px 1px 0 #e23636;
+}
+
+
+@media (max-width: 768px) {
+  .related-comics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .related-comics-grid {
+    grid-template-columns: 1fr;
+  }
+}
