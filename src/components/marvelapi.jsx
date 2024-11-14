@@ -1,7 +1,8 @@
 const ts = 1;
 const BASE_URL = 'https://gateway.marvel.com/v1/public';
-const PUBLIC_KEY = '383c7dc4c589b656cd9896e112bb2315';
-const PRE_GENERATED_HASH = 'c61250fa0116673c5c6827a4be0850dd';
+const PUBLIC_KEY = '';
+//La public key y la hash estan en un archivo txt aparte
+const PRE_GENERATED_HASH = '';
 
 export const fetchMarvelData = () => {
     return fetch(
