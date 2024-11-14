@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-  import { fetchComicData, fetchComicCharactersData, fetchRelatedComics } from './marvelapi';
+import { fetchComicData, fetchComicCharactersData, fetchRelatedComics } from './marvelapi';
 
 import './style.css';
 import CharacterComics from './CharacterComics';

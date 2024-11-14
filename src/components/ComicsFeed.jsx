@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 
 import './style.css';
 
-const ComicsFeed = ({setSelectedComic, comics, setComics, setFavorites, favorites}) => {
+const ComicsFeed = ({setSelectedComic, comics, setFavorites, favorites}) => {
  
   const [showFavorites, setShowFavorites] = useState(false);
   const cleanTitle = (title) => {
